@@ -1,4 +1,4 @@
-# 🎓 Sistema de Gestión Escolar
+# Sistema de Gestión Escolar
 
 Sistema de escritorio desarrollado en **C# y Windows Forms** para la gestión de información académica y administrativa de una institución educativa.
 
@@ -6,11 +6,9 @@ El proyecto utiliza **SQL Server** como sistema gestor de base de datos y permit
 
 La aplicación se comunica con la base de datos mediante `Microsoft.Data.SqlClient` y utiliza **procedimientos almacenados y vistas SQL** para realizar las operaciones de consulta, creación, actualización y eliminación de información.
 
-## 📋 Módulos incluidos
+## Módulos incluidos
 
-Actualmente el sistema contiene diferentes módulos para administrar la información escolar:
-
-### 👨‍🎓 Alumnos
+### Alumnos
 
 Permite registrar y administrar la información de los alumnos.
 
@@ -27,7 +25,7 @@ Archivo principal:
 Alumno.cs
 ```
 
-### 👨‍🏫 Académicos
+### Académicos
 
 Permite administrar la información de los profesores o académicos.
 
@@ -44,7 +42,7 @@ Archivo principal:
 Academico.cs
 ```
 
-### 🏫 Aulas
+### Aulas
 
 Permite administrar las aulas disponibles dentro de la institución.
 
@@ -62,7 +60,7 @@ Archivo principal:
 Aula.cs
 ```
 
-### 🎓 Carreras
+### Carreras
 
 Permite registrar y administrar las diferentes carreras académicas.
 
@@ -78,7 +76,7 @@ Archivo principal:
 Carrera.cs
 ```
 
-### 🌎 Ubicación
+### Ubicación
 
 El sistema cuenta con módulos para administrar información geográfica relacionada con las instituciones:
 
@@ -94,7 +92,7 @@ EstadosE.cs
 Ciudad.cs
 ```
 
-### 📚 Materias
+### Materias
 
 Permite administrar las materias disponibles dentro del sistema académico.
 
@@ -110,7 +108,7 @@ Archivo principal:
 Materia.cs
 ```
 
-### 👥 Grupos
+### Grupos
 
 Permite relacionar diferentes elementos del sistema académico para crear grupos.
 
@@ -128,7 +126,7 @@ Archivo principal:
 Grupo.cs
 ```
 
-### 📝 Reinscripciones
+### Reinscripciones
 
 Permite registrar la reinscripción de alumnos a grupos y almacenar su calificación.
 
@@ -145,7 +143,7 @@ Archivo principal:
 Reinscripcion.cs
 ```
 
-## 🗄️ Base de datos
+## Base de datos
 
 El sistema utiliza **Microsoft SQL Server** como motor de base de datos.
 
@@ -163,7 +161,7 @@ BDEscolar.sql
 
 Este archivo contiene la estructura necesaria para crear la base de datos, tablas, vistas, procedimientos almacenados y datos iniciales.
 
-## 📊 Tablas
+## Tablas
 
 La base de datos contiene las siguientes tablas principales:
 
@@ -183,7 +181,7 @@ La base de datos contiene las siguientes tablas principales:
 
 Las tablas utilizan claves primarias y relaciones mediante claves foráneas para mantener la integridad de la información.
 
-## 👁️ Vistas SQL
+## Vistas SQL
 
 El proyecto utiliza vistas para facilitar la consulta de información desde la aplicación.
 
@@ -226,7 +224,7 @@ viewReinscripcionesCompleto
 
 combina información de reinscripciones con alumnos, grupos, académicos, carreras y aulas.
 
-## ⚙️ Procedimientos almacenados
+## Procedimientos almacenados
 
 Las operaciones de modificación de datos se realizan mediante **procedimientos almacenados de SQL Server**.
 
@@ -279,27 +277,7 @@ sp_EliminarReinscripcion
 
 Esto permite separar parte de la lógica de acceso y modificación de datos entre la aplicación y el servidor de base de datos.
 
-## ✨ Características
-
-* 🎓 Gestión de información escolar.
-* 👨‍🎓 Administración de alumnos.
-* 👨‍🏫 Administración de académicos.
-* 🏫 Administración de aulas.
-* 📚 Administración de materias.
-* 🎓 Administración de carreras.
-* 👥 Administración de grupos.
-* 📝 Registro de reinscripciones.
-* 📊 Consulta de información mediante `DataGridView`.
-* ✏️ Edición de registros.
-* ➕ Creación de registros.
-* 🗑️ Eliminación de registros.
-* 🔗 Relaciones entre diferentes entidades académicas.
-* 🗄️ Integración con SQL Server.
-* ⚙️ Uso de procedimientos almacenados.
-* 👁️ Uso de vistas SQL para consultas.
-* 🖥️ Interfaz gráfica desarrollada con Windows Forms.
-
-## 🛠️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 * **C#**
 * **.NET 9**
@@ -309,7 +287,7 @@ Esto permite separar parte de la lógica de acceso y modificación de datos entr
 * **Visual Studio**
 * **SQL Server Management Studio**
 
-## 🔌 Conexión con la base de datos
+## Conexión con la base de datos
 
 La aplicación utiliza una cadena de conexión para comunicarse con SQL Server.
 
@@ -337,9 +315,9 @@ SELECT * FROM viewGrupoCompleto
 SELECT * FROM viewReinscripcionesCompleto
 ```
 
-> ⚠️ La cadena de conexión incluida actualmente en el código está configurada para una instancia específica de SQL Server. Para ejecutar el proyecto en otro equipo es necesario modificarla de acuerdo con la configuración local.
+> NOTA: La cadena de conexión incluida actualmente en el código está configurada para una instancia específica de SQL Server. Para ejecutar el proyecto en otro equipo es necesario modificarla de acuerdo con la configuración local.
 
-## 🚀 Instalación y ejecución
+## Instalación y ejecución
 
 ### 1. Requisitos
 
