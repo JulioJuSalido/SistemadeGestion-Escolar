@@ -399,4 +399,7 @@ Program.cs
 
 
 y ejecuta el formulario principal del sistema.
+
+### Imagen:
+
 <img width="787" height="290" alt="image" src="https://github.com/user-attachments/assets/a5becf51-f5ef-478d-9c11-50828dfcf7c5" />
