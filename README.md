@@ -1,18 +1,18 @@
 # Sistema de Gestión Escolar
 
-Sistema de gestión escolar orientado a la administración de información académica de una institución educativa.
+Sistema de gestión escolar orientado a la organización y administración de información académica de una institución educativa.
 
-El proyecto utiliza **Microsoft SQL Server** como sistema gestor de base de datos para almacenar y organizar información relacionada con alumnos, académicos, aulas, carreras, ciudades, estados, países, estatus, grupos, materias y reinscripciones.
+El proyecto utiliza **Microsoft SQL Server** como sistema gestor de base de datos para almacenar información relacionada con alumnos, académicos, aulas, carreras, ciudades, estados, países, estatus, grupos, materias y reinscripciones.
 
-La base de datos permite centralizar la información de las diferentes entidades del sistema escolar y cuenta con tablas para almacenar los registros correspondientes a cada módulo.
+La base de datos organiza la información en diferentes tablas, permitiendo mantener los registros de las entidades escolares y establecer relaciones entre los datos que forman parte del sistema.
 
 ## Módulos incluidos
 
 ### Alumnos
 
-Permite almacenar y administrar la información de los alumnos.
+Almacena la información de los alumnos de la institución.
 
-Entre los datos manejados se encuentran:
+Los datos registrados incluyen:
 
 * Nombre
 * Apellidos
@@ -27,9 +27,9 @@ Alumno
 
 ### Académicos
 
-Permite almacenar la información de los profesores o académicos de la institución.
+Contiene la información de los profesores o académicos de la institución.
 
-Los registros contienen información como:
+Los registros incluyen:
 
 * Nombre
 * Apellidos
@@ -44,9 +44,9 @@ Academico
 
 ### Aulas
 
-Permite almacenar información de las aulas disponibles dentro de la institución.
+Almacena información de las aulas disponibles dentro de la institución.
 
-Se manejan datos como:
+Se contemplan los siguientes datos:
 
 * Edificio
 * Número de aula
@@ -62,12 +62,12 @@ Aula
 
 ### Carreras
 
-Permite registrar y organizar las carreras académicas.
+Permite organizar la información de las carreras académicas.
 
 Los registros incluyen:
 
 * Nombre de la carrera
-* Siglas de la carrera
+* Siglas
 * Fecha y hora de creación
 
 Tabla principal:
@@ -78,9 +78,9 @@ Carrera
 
 ### Ubicación
 
-La base de datos incluye tablas para almacenar información geográfica relacionada con la ubicación de las instituciones.
+Organiza la información geográfica mediante entidades que permiten identificar la ubicación de las instituciones.
 
-Se contemplan las siguientes entidades:
+Incluye las siguientes tablas:
 
 * Países
 * Estados
@@ -94,13 +94,13 @@ Estado
 Ciudad
 ```
 
-Las tablas de ubicación incluyen campos para identificar sus registros y relacionar ciudades con estados, así como estados con países.
+Estas entidades permiten relacionar las ciudades con sus respectivos estados y los estados con sus países.
 
 ### Estatus
 
-Permite almacenar información de los diferentes estatus utilizados dentro del sistema escolar.
+Contiene el catálogo de estatus utilizados en el sistema escolar.
 
-Los registros incluyen:
+Los datos registrados incluyen:
 
 * Clave de estatus
 * Nombre del estatus
@@ -115,9 +115,9 @@ Estatus
 
 ### Materias
 
-Permite almacenar información de las materias disponibles dentro del sistema académico.
+Almacena la información de las materias que forman parte del sistema académico.
 
-La tabla contempla campos para registrar:
+Los datos contemplados incluyen:
 
 * Nombre de la materia
 * Créditos
@@ -131,15 +131,15 @@ Materia
 
 ### Grupos
 
-Permite almacenar información de los grupos académicos y los datos asociados a su organización.
+Organiza la información relacionada con los grupos académicos y los elementos asociados a su estructura.
 
-Los campos contemplados incluyen:
+Entre los datos relacionados se encuentran:
 
-* Alumno
-* Maestro
-* Aula
-* Horario
-* Carrera
+* Alumnos
+* Académicos
+* Aulas
+* Horarios
+* Carreras
 
 Tabla principal:
 
@@ -149,9 +149,7 @@ Grupo
 
 ### Reinscripciones
 
-Permite almacenar los registros de reinscripción de los alumnos dentro del sistema escolar.
-
-Esta entidad forma parte de la estructura de la base de datos y se utiliza para mantener la información correspondiente a las reinscripciones.
+Contiene los registros correspondientes a las reinscripciones de los alumnos dentro del sistema escolar.
 
 Tabla principal:
 
@@ -169,15 +167,13 @@ El nombre de la base de datos es:
 BDEscolar
 ```
 
-El script de creación de la base de datos se encuentra en el archivo:
+El script de creación se encuentra en el archivo:
 
 ```text
 BDESCOLAR.sql
 ```
 
-Este archivo contiene instrucciones SQL para crear la base de datos, definir las tablas y cargar datos iniciales.
-
-La base de datos está diseñada para organizar la información escolar mediante diferentes entidades, cada una con sus propios campos y claves primarias.
+Este archivo contiene las instrucciones SQL para crear la base de datos, definir las tablas e insertar los datos iniciales incluidos en el script.
 
 ## Tablas
 
@@ -188,49 +184,35 @@ La base de datos contiene las siguientes tablas principales:
 | `Academico` | Información de los profesores o académicos |
 | `Alumno` | Información de los alumnos |
 | `Aula` | Información de las aulas |
-| `Carrera` | Carreras académicas |
+| `Carrera` | Información de las carreras académicas |
 | `Ciudad` | Información de las ciudades |
-| `Estado` | Estados o entidades federativas |
+| `Estado` | Información de los estados o entidades federativas |
 | `Estatus` | Catálogo de estatus |
 | `Grupo` | Información de los grupos académicos |
 | `Materia` | Información de las materias |
 | `Pais` | Información de los países |
 | `Reinscripcion` | Registros de reinscripción |
 
-Las tablas utilizan claves primarias para identificar sus registros. La estructura también contempla campos de identificación que permiten asociar información de las distintas entidades escolares.
+Cada tabla almacena información específica de una entidad del sistema. Las claves primarias permiten identificar los registros y las relaciones entre las entidades ayudan a mantener organizada la información.
 
 ## Relaciones entre entidades
 
-La estructura de la base de datos contempla información que permite asociar las entidades del sistema.
+La estructura de la base de datos permite organizar información relacionada con las diferentes áreas del sistema escolar.
 
-Entre los datos relacionados se encuentran:
+Entre las relaciones contempladas se encuentran:
 
-* La información geográfica de países, estados y ciudades.
-* Los alumnos y los grupos académicos.
-* Los académicos y los grupos.
-* Las aulas, los horarios y las carreras.
-* Los registros de reinscripción.
+* Países, estados y ciudades.
+* Alumnos y grupos académicos.
+* Académicos y grupos.
+* Aulas, horarios y carreras.
+* Registros de reinscripción.
 
-Estas asociaciones permiten organizar la información de la institución en diferentes tablas, evitando concentrar todos los datos en una sola estructura.
-
-## Vistas SQL
-
-El archivo `BDESCOLAR.sql` proporcionado no contiene definiciones de vistas SQL.
-
-Por lo tanto, no se documentan nombres de vistas específicos hasta verificar si existen en otro archivo o proyecto de la solución.
-
-## Procedimientos almacenados
-
-El archivo `BDESCOLAR.sql` proporcionado tampoco contiene definiciones de procedimientos almacenados.
-
-Las operaciones de creación, actualización y eliminación de registros deberán documentarse de acuerdo con la implementación real del proyecto de aplicación o con los scripts SQL adicionales, si existen.
+Esta organización permite distribuir la información entre diferentes tablas y facilitar su administración.
 
 ## Tecnologías utilizadas
 
 * **Microsoft SQL Server**
 * **SQL Server Management Studio**
-
-La tecnología y la versión del framework utilizados por la aplicación de escritorio deben confirmarse mediante los archivos del proyecto de software.
 
 ## Instalación y ejecución
 
@@ -242,22 +224,18 @@ Para crear y administrar la base de datos se necesita:
 * **Microsoft SQL Server**
 * **SQL Server Management Studio**
 
-Si se utiliza una aplicación de escritorio asociada a esta base de datos, también será necesario instalar las herramientas y dependencias correspondientes a dicho proyecto.
+### 2. Clonar el repositorio
 
-### 2. Obtener los archivos del proyecto
-
-Descargar o clonar el repositorio desde GitHub.
-
-Si el repositorio se encuentra disponible en la siguiente dirección:
+Clonar el repositorio desde GitHub:
 
 ```bash
-git clone https://github.com/JulioJuSalido/Sistema-Gestion-Escolar.git
+git clone https://github.com/JulioJuSalido/SistemadeGestion-Escolar.git
 ```
 
 Entrar al directorio del proyecto:
 
 ```bash
-cd Sistema-Gestion-Escolar
+cd SistemadeGestion-Escolar
 ```
 
 ### 3. Crear la base de datos
@@ -270,40 +248,31 @@ BDESCOLAR.sql
 
 desde **SQL Server Management Studio**.
 
-Conectarse a la instancia de SQL Server correspondiente y ejecutar el script.
+Conectarse a la instancia de SQL Server correspondiente y ejecutar el script para crear la base de datos `BDEscolar`, sus tablas y los datos iniciales incluidos.
 
-El script crea la base de datos:
-
-```text
-BDEscolar
-```
-
-También contiene la definición de las tablas y los datos iniciales incluidos en el archivo.
-
-**Nota:** el script utiliza una configuración de archivos de base de datos asociada a una instalación específica de SQL Server. Si la instancia o las rutas locales son diferentes, puede ser necesario ajustar las rutas de los archivos de datos y del registro antes de ejecutarlo.
+**Nota:** el script puede contener rutas de archivos de datos asociadas a una instalación específica de SQL Server. Si las rutas o la configuración del servidor son diferentes, será necesario ajustarlas antes de ejecutar el script.
 
 ### 4. Configurar la conexión
 
-Si la solución incluye una aplicación que se conecta a la base de datos, será necesario configurar la cadena de conexión para utilizar la instancia de SQL Server instalada en el equipo.
+Si se utiliza una aplicación para conectarse a la base de datos, la cadena de conexión debe apuntar a la instancia de SQL Server donde se creó `BDEscolar`.
 
 Por ejemplo, para una instancia local llamada `SQLEXPRESS`:
 
 ```csharp
-Server=localhost\\SQLEXPRESS;
-Database=BDEscolar;
-Integrated Security=True;
-TrustServerCertificate=True;
+string connectionString =
+    "Server=localhost\\SQLEXPRESS;" +
+    "Database=BDEscolar;" +
+    "Integrated Security=True;" +
+    "TrustServerCertificate=True;";
 ```
 
-La cadena debe adaptarse al mecanismo de conexión utilizado por la aplicación. Si el proyecto utiliza autenticación de SQL Server, deberán configurarse las credenciales correspondientes.
+La configuración debe adaptarse a la instancia instalada y al método de autenticación utilizado.
 
 ### 5. Ejecutar el proyecto
 
-Si el repositorio incluye una solución de Visual Studio, abrir el archivo `.sln` correspondiente y verificar que las dependencias estén instaladas.
+Una vez creada la base de datos, se puede utilizar desde la aplicación que se conecte a ella, siempre que la cadena de conexión y los requisitos correspondientes estén configurados correctamente.
 
-Después, compilar y ejecutar la aplicación de acuerdo con la configuración del proyecto.
+## Imagen
 
-El archivo de solución, el formulario principal y el punto de entrada deberán identificarse en los archivos reales de la aplicación.
+<img width="612" height="377" alt="image" src="https://github.com/user-attachments/assets/a3020a23-ce2b-4d88-83ed-12eb62bea1e2" />
 
-### Imagen
-<img width="612" height="377" alt="image" src="https://github.com/user-attachments/assets/27c36c67-ba30-4d37-9f77-f0c7e39dbf9f" />
